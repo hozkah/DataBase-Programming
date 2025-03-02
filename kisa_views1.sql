@@ -5,7 +5,7 @@ CREATE VIEW CustomerAccountInfo AS
 SELECT c.CustomerID,p.FirstName, c.DateOfBirth, a.AccountNumber, a.AccountType, a.Balance
 FROM CUSTOMER c
 JOIN ACCOUNT a ON c.CustomerID = a.CustomerID
-Join person p on p.customerID= c.customerID;
+Join person p on p.personID= c.personID;
 
 -- View to retrieve employee branch information
 CREATE VIEW EmployeeBranchInfo AS
