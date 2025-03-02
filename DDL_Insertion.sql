@@ -18,16 +18,16 @@ INSERT INTO PERSON (FirstName, LastName, Email, Phone, Address) VALUES
 
 -- Inserting into EMPLOYEE
 INSERT INTO EMPLOYEE (EmployeeID, PersonID, BranchID, Position) VALUES
-('E011', 11, 'B001', 'Loan Officer'),
-('E012', 12, 'B002', 'Cashier'),
-('E013', 13, 'B003', 'Accountant'),
-('E014', 14, 'B004', 'Supervisor'),
-('E015', 15, 'B005', 'Manager'),
-('E016', 16, 'B001', 'Security & Forensic'),
-('E017', 6, 'B002', 'Cashier'),
-('E018', 7, 'B003', 'Loan Officer'),
-('E019', 8, 'B004', 'Accountant'),
-('E020', 9, 'B005', 'Manager');
+('E001', 11, 'B001', 'Loan Officer'),
+('E002', 12, 'B002', 'Cashier'),
+('E003', 13, 'B003', 'Accountant'),
+('E004', 14, 'B004', 'Supervisor'),
+('E005', 15, 'B005', 'Manager'),
+('E006', 16, 'B001', 'Security & Forensic'),
+('E007', 6, 'B002', 'Cashier'),
+('E008', 7, 'B003', 'Loan Officer'),
+('E009', 8, 'B004', 'Accountant'),
+('E010', 9, 'B005', 'Manager');
 
 --Inserting into CUSTOMER
 INSERT INTO CUSTOMER (PersonID, DateOfBirth) VALUES
@@ -58,12 +58,12 @@ INSERT INTO ACCOUNT (CustomerID, BranchID, AccountType, Balance, OpeningDate) VA
 (3, 'B003', 'Fixed_Deposit', 1000000.00, '2021-07-25'),
 (4, 'B001', 'Saving', 250000.00, '2023-05-30'),
 (5, 'B002', 'Student', 200000.00, '2022-11-12'),
-(6, 'B003', 'Checking', 300000.00, '2023-04-20'),
+(6, 'B003', 'Saving', 300000.00, '2023-04-20'),
 (7, 'B004', 'Saving', 450000.00, '2022-10-15'),
 (8, 'B005', 'Student', 120000.00, '2023-03-12'),
 (9, 'B001', 'Fixed_Deposit', 700000.00, '2021-09-17'),
 (10, 'B002', 'Saving', 50000.00, '2023-01-30'),
-(2, 'B003', 'Checking', 600000.00, '2022-12-01'),
+(2, 'B003', 'Saving', 600000.00, '2022-12-01'),
 (3, 'B004', 'Fixed_Deposit', 900000.00, '2021-11-05'),
 (4, 'B005', 'Saving', 220000.00, '2023-06-19'),
 (5, 'B001', 'Student', 180000.00, '2022-08-07');
@@ -90,3 +90,12 @@ INSERT INTO LOAN (CustomerID, EmployeeID, LoanAmount, InterestRate, Status, Star
 (3, 'E003', 700000.00, 5.0, 'Approved', '2024-03-10', '2026-03-10'),
 (4, 'E004', 400000.00, 4.8, 'Pending', '2024-04-20', '2025-04-20'),
 (5, 'E005', 600000.00, 6.2, 'Approved', '2024-05-05', '2027-05-05');
+
+
+select * from employee;
+drop Table transaction;
+
+SELECT * FROM Account WHERE AccountNumber IN (1,2,3,4,5,6,7,8,9,10);
+
+SHOW CREATE TABLE TRANSACTION;
+drop TABLE employee;

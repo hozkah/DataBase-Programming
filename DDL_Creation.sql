@@ -1,5 +1,4 @@
 USE BANK;
-
 CREATE TABLE PERSON (
     PersonID INT PRIMARY KEY AUTO_INCREMENT,
     FirstName VARCHAR(50) NOT NULL,
@@ -12,7 +11,7 @@ CREATE TABLE PERSON (
 CREATE TABLE EMPLOYEE (
     EmployeeID VARCHAR (5) PRIMARY KEY,
     PersonID INT UNIQUE,
-    BranchID VARCHAR,
+    BranchID VARCHAR(10),
     Position ENUM('Manager', 'Supervisor', 'Accountant', 'Loan Officer', 'Cashier', 'Security & Forensic'),
     FOREIGN KEY (PersonID) REFERENCES PERSON(PersonID) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (BranchID) REFERENCES BRANCH(BranchID) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -26,7 +25,7 @@ CREATE TABLE CUSTOMER (
 );
 
 CREATE TABLE BRANCH (
-    BranchID VARCHAR PRIMARY KEY,
+    BranchID VARCHAR(10) PRIMARY KEY,
     BranchName VARCHAR(100) NOT NULL,
     Address VARCHAR(255) NOT NULL,
     City VARCHAR(50) NOT NULL,
@@ -36,7 +35,7 @@ CREATE TABLE BRANCH (
 CREATE TABLE ACCOUNT (
     AccountNumber INT PRIMARY KEY AUTO_INCREMENT,
     CustomerID INT,
-    BranchID VARCHAR,
+    BranchID VARCHAR(10),
     AccountType ENUM('Saving', 'Student', 'Fixed_Deposit'),
     Balance DECIMAL(15,2) DEFAULT 0.00,
     OpeningDate DATE NOT NULL,
